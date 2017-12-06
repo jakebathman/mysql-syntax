@@ -42,7 +42,7 @@
         </dict>
       </dict>
       <key>match</key>
-      <string>(?i:^\s*(create)\s+(aggregate|conversion|database|domain|function|procedure|group|(unique\s+)?index|language|operator class|operator|rule|schema|sequence|table|tablespace|trigger|type|user|view)\s+)(['"`]?)(\w+)\4</string>
+      <string>(?i:^\s*(create(\s+temporary)?)\s+(aggregate|conversion|database|domain|function|procedure|group|(unique\s+)?index|language|operator class|operator|rule|schema|sequence|table|tablespace|trigger|type|user|view)\s+)(['"`]?)(\w+)\5</string>
       <key>name</key>
       <string>meta.create.sql</string>
     </dict>
@@ -61,9 +61,28 @@
         </dict>
       </dict>
       <key>match</key>
-      <string>(?i:^\s*(drop)\s+(aggregate|conversion|database|domain|function|procedure|group|index|language|operator class|operator|rule|schema|sequence|table|tablespace|trigger|type|user|view))</string>
+      <string>(?i:^\s*(drop(\s+temporary)?)\s+(aggregate|conversion|database|domain|function|procedure|group|index|language|operator class|operator|rule|schema|sequence|table|tablespace|trigger|type|user|view))</string>
       <key>name</key>
       <string>meta.drop.sql</string>
+    </dict>
+    <dict>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>keyword.other.create.sql</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>keyword.other.sql</string>
+        </dict>
+      </dict>
+      <key>match</key>
+      <string>(?i:^\s*(truncate(\s+table)?))</string>
+      <key>name</key>
+      <string>meta.truncate.sql</string>
     </dict>
     <dict>
       <key>captures</key>
@@ -271,6 +290,12 @@
     </dict>
     <dict>
       <key>match</key>
+      <string>(?i:^\s*(add\s+(column|index|key|constraint|unique|fulltext|spatial)))</string>
+      <key>name</key>
+      <string>keyword.other.alter-add.sql</string>
+    </dict>
+    <dict>
+      <key>match</key>
       <string>(?i)\bAS\b</string>
       <key>name</key>
       <string>keyword.other.alias.sql</string>
@@ -289,7 +314,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>[!&lt;&gt;]?=|&lt;&gt;|&lt;|&gt;</string>
+      <string>[!&lt;&gt;]?=|&lt;&gt;|&lt;|&gt;|NOT IN|IN|BETWEEN|!=|<=>|<=|=>|<|></string>
       <key>name</key>
       <string>keyword.operator.comparison.sql</string>
     </dict>
@@ -304,6 +329,14 @@
       <string>\|\|</string>
       <key>name</key>
       <string>keyword.operator.concatenator.sql</string>
+    </dict>
+    <dict>
+      <key>comment</key>
+      <string>All functions and operators in MySQL 5.7</string>
+      <key>match</key>
+      <string>(?i)\b(abs|acos|adddate|addtime|aes_decrypt|aes_encrypt|any_value|area|asbinary|ascii|asin|astext|asymmetric_decrypt|asymmetric_derive|asymmetric_encrypt|asymmetric_sign|asymmetric_verify|atan|atan2|avg|benchmark|bin|bit_and|bit_count|bit_length|bit_or|bit_xor|buffer|cast|ceil|ceiling|centroid|char|char_length|character_length|charset|coalesce|coercibility|collation|compress|concat|concat_ws|connection_id|contains|conv|convert|convert_tz|convexhull|cos|cot|count|crc32|create_asymmetric_priv_key|create_asymmetric_pub_key|create_dh_parameters|create_digest|crosses|curdate|current_date|current_time|current_timestamp|current_user|curtime|database|date|date_add|date_format|date_sub|datediff|day|dayname|dayofmonth|dayofweek|dayofyear|decode|default|degrees|des_decrypt|des_encrypt|dimension|disjoint|distance|elt|encode|encrypt|endpoint|envelope|equals|exp|export_set|exteriorring|extract|extractvalue|field|find_in_set|floor|format|found_rows|from_base64|from_days|from_unixtime|geomcollfromtext|geomcollfromwkb|geometrycollection|geometryn|geometrytype|geomfromtext|geomfromwkb|get_format|get_lock|glength|greatest|group_concat|gtid_subset|gtid_subtract|hex|hour|if|ifnull|in|inet_aton|inet_ntoa|inet6_aton|inet6_ntoa|insert|instr|interiorringn|intersects|interval|is_free_lock|is_ipv4|is_ipv4_compat|is_ipv4_mapped|is_ipv6|is_used_lock|isclosed|isempty|isnull|issimple|json_append|json_array|json_array_append|json_array_insert|json_contains|json_contains_path|json_depth|json_extract|json_insert|json_keys|json_length|json_merge|json_merge_preserve|json_object|json_quote|json_remove|json_replace|json_search|json_set|json_type|json_unquote|json_valid|last_insert_id|lcase|least|left|length|linefromtext|linefromwkb|linestring|ln|load_file|localtime|locate|log|log10|log2|lower|lpad|ltrim|make_set|makedate|maketime|master_pos_wait|max|mbrcontains|mbrcoveredby|mbrcovers|mbrdisjoint|mbrequal|mbrequals|mbrintersects|mbroverlaps|mbrtouches|mbrwithin|md5|microsecond|mid|min|minute|mlinefromtext|mlinefromwkb|mod|month|monthname|mpointfromtext|mpointfromwkb|mpolyfromtext|mpolyfromwkb|multilinestring|multipoint|multipolygon|name_const|now|nullif|numgeometries|numinteriorrings|numpoints|oct|octet_length|old_password|ord|overlaps|password|period_add|period_diff|pi|point|pointfromtext|pointfromwkb|pointn|polyfromtext|polyfromwkb|polygon|position|pow|power|quarter|quote|radians|rand|random_bytes|release_all_locks|release_lock|repeat|replace|reverse|right|round|row_count|rpad|rtrim|schema|sec_to_time|second|session_user|sha1|sha2|sign|sin|sleep|soundex|space|sqrt|srid|st_area|st_asbinary|st_asgeojson|st_astext|st_buffer|st_buffer_strategy|st_centroid|st_contains|st_convexhull|st_crosses|st_difference|st_dimension|st_disjoint|st_distance|st_distance_sphere|st_endpoint|st_envelope|st_equals|st_exteriorring|st_geohash|st_geomcollfromtext|st_geomcollfromwkb|st_geometryn|st_geometrytype|st_geomfromgeojson|st_geomfromtext|st_geomfromwkb|st_interiorringn|st_intersection|st_intersects|st_isclosed|st_isempty|st_issimple|st_isvalid|st_latfromgeohash|st_length|st_linefromtext|st_linefromwkb|st_longfromgeohash|st_makeenvelope|st_mlinefromtext|st_mlinefromwkb|st_mpointfromtext|st_mpointfromwkb|st_mpolyfromtext|st_mpolyfromwkb|st_numgeometries|st_numinteriorring|st_numpoints|st_overlaps|st_pointfromgeohash|st_pointfromtext|st_pointfromwkb|st_pointn|st_polyfromtext|st_polyfromwkb|st_simplify|st_srid|st_startpoint|st_symdifference|st_touches|st_union|st_validate|st_within|st_x|st_y|startpoint|std|stddev|stddev_pop|stddev_samp|str_to_date|strcmp|subdate|substr|substring|substring_index|subtime|sum|sysdate|system_user|tan|time|time_format|time_to_sec|timediff|timestamp|timestampadd|timestampdiff|to_base64|to_days|to_seconds|touches|trim|truncate|ucase|uncompress|uncompressed_length|unhex|unix_timestamp|updatexml|upper|user|utc_date|utc_time|utc_timestamp|uuid|uuid_short|validate_password_strength|values|var_pop|var_samp|variance|version|wait_for_executed_gtid_set|wait_until_sql_thread_after_gtids|week|weekday|weekofyear|weight_string|within|x|y|year|yearweek|-|\*|xor|=|\:=|between|and|binary|&|~|\||\^|case|div|<=>|>|>=|is|is not|is not null|is null|->|->>|last_day|<<|<|<=|like|localtimestamp|match|%|mod|not|!|!=|<>|not in|not like|not regexp|\|\||or|\+|regexp|>>|rlike|sounds like)\b</string>
+      <key>name</key>
+      <string>support.function.sql</string>
     </dict>
     <dict>
       <key>comment</key>
@@ -454,7 +487,7 @@
           <key>end</key>
           <string>\*/</string>
           <key>name</key>
-          <string>comment.block.c</string>
+          <string>comment</string>
         </dict>
       </array>
     </dict>
