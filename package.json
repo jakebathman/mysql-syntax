@@ -1,0 +1,35 @@
+{
+    "name": "mysql-syntax",
+    "displayName": "MySQL Syntax",
+    "description": "MySQL syntax highlighting support",
+    "version": "1.1.0",
+    "publisher": "jakebathman",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jakebathman/mysql-syntax"
+    },
+    "keywords": [
+        "syntax",
+        "mysql"
+    ],
+    "icon": "icon.png",
+    "contributes": {
+        "languages": [{
+            "id": "sql",
+            "aliases": ["MySQL", "sql"],
+            "extensions": [".sql",".ddl",".dml"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "sql",
+            "scopeName": "source.sql",
+            "path": "./syntaxes/MySQL.tmLanguage"
+        }]
+    }
+}
