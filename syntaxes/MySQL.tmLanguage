@@ -314,7 +314,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>[!&lt;&gt;]?=|&lt;&gt;|&lt;|&gt;|NOT IN|IN|BETWEEN|!=|<=>|<=|=>|<|></string>
+      <string>[!&lt;&gt;]?=|&lt;&gt;|&lt;|&gt;|NOT IN|\bIN\b|BETWEEN|!=|<=>|<=|=>|<|></string>
       <key>name</key>
       <string>keyword.operator.comparison.sql</string>
     </dict>
