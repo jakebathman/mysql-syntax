@@ -5,3 +5,7 @@ This extension adds specific language syntax for MySQL. It's a port of the Subli
 ## Having trouble?
 
 If something doesn't look right, please let me know on twitter [@jakebathman](https://twitter.com/jakebathman) or [submit an issue](https://github.com/jakebathman/mysql-syntax)
+
+## Link to the store
+
+https://marketplace.visualstudio.com/items?itemName=jakebathman.mysql-syntax
