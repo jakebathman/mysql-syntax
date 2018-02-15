@@ -2,7 +2,7 @@
     "name": "mysql-syntax",
     "displayName": "MySQL Syntax",
     "description": "MySQL syntax highlighting support",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "publisher": "jakebathman",
     "engines": {
         "vscode": "^1.18.0"
