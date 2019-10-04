@@ -62,3 +62,49 @@ deallocate prepare variable;
 
 -- Issue #6
 execute processToExecute using variable1, variable2;
+
+-- Issue #8
+SELECT CURRENT_DATE();
+
+-- Issue #10 "on update cascade"
+create table cust_pers
+	(	cust_id			int unsigned            not null
+	,	pers_id			int unsigned		not null
+	,	primary key		(cust_id, pers_id)
+	,	foreign key		(cust_id)			references	cust(id)		on delete cascade	on update cascade
+	,	foreign key		(pers_id)			references 	pers(id)		on delete cascade	on update cascade
+	);	
+
+-- Issue #11 "unique key"
+create table country
+	(	id				smallint unsigned	not null	primary key		auto_increment
+	,	name			varchar(100)		not null	
+	,	iso_2			varchar(2)			not null
+	,	iso_3			varchar(3)			not null
+	,	unique key		ux_ctry_iso_2		(iso_2)
+	,	unique key		ux_ctry_iso_3		(iso_3)
+	,	unique key		ux_ctry_name		(name)
+	);
+
+-- Issue #12 "tinyint" and "datetime"
+create table pers
+	(	id				int unsigned		not null	primary key 	auto_increment
+	,	inactive		tinyint unsigned	default 	0
+	,	first_name		varchar(100)
+	,	last_name		varchar(100)
+	,	created		datetime			not null	default			current_timestamp
+	);	
+
+-- Issue #13 "ALTER"
+ALTER TABLE testalter_tbl DROP i;
+ALTER TABLE testalter_tbl ADD i INT FIRST;
+ALTER TABLE testalter_tbl DROP i;
+ALTER TABLE testalter_tbl ADD i INT AFTER c;
+
+-- Issue #14: space in column alias
+select column1 as 'Column One'
+from table
+where column1 = 'foo';
+
+select id,animal as 'Animal Name', expiry from creatures
+
