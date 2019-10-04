@@ -383,73 +383,73 @@
         <key>match</key>
         <string>(?i:\b(select(\s+distinct)?|insert\s+(ignore\s+)?into|update|delete|from|set|where|group\sby|or|like|and|union(\s+all)?|having|order\sby|limit|(inner|cross)\s+join|straight_join|(left|right)(\s+outer)?\s+join|natural(\s+(left|right)(\s+outer)?)?\s+join)\b)</string>
         <key>name</key>
-        <string>keyword.other.DML.sql</string>
+                <string>keyword.other.DML.mysql</string>
       </dict>
       <dict>
         <key>match</key>
         <string>(?i:\b(on|((is\s+)?not\s+)?null)\b)</string>
         <key>name</key>
-        <string>keyword.other.DDL.create.II.sql</string>
+                <string>keyword.other.DDL.create.II.mysql</string>
       </dict>
       <dict>
         <key>match</key>
         <string>(?i:\bvalues\b)</string>
         <key>name</key>
-        <string>keyword.other.DML.II.sql</string>
+                <string>keyword.other.DML.II.mysql</string>
       </dict>
       <dict>
         <key>match</key>
         <string>(?i:\b(begin(\s+work)?|start\s+transaction|commit(\s+work)?|rollback(\s+work)?)\b)</string>
         <key>name</key>
-        <string>keyword.other.LUW.sql</string>
+                <string>keyword.other.LUW.mysql</string>
       </dict>
       <dict>
         <key>match</key>
         <string>(?i:\b(grant(\swith\sgrant\soption)?|revoke)\b)</string>
         <key>name</key>
-        <string>keyword.other.authorization.sql</string>
+                <string>keyword.other.authorization.mysql</string>
       </dict>
       <dict>
         <key>match</key>
         <string>(?i:\bin\b)</string>
         <key>name</key>
-        <string>keyword.other.data-integrity.sql</string>
+                <string>keyword.other.data-integrity.mysql</string>
       </dict>
       <dict>
         <key>match</key>
         <string>(?i:^\s*(comment\s+on\s+(table|column|aggregate|constraint|database|domain|function|procedure|index|operator|rule|schema|sequence|trigger|type|view))\s+.*?\s+(is)\s+)</string>
         <key>name</key>
-        <string>keyword.other.object-comments.sql</string>
+                <string>keyword.other.object-comments.mysql</string>
       </dict>
       <dict>
         <key>match</key>
         <string>(?i:^\s*(add\s+(column|index|key|constraint|unique|fulltext|spatial)))</string>
         <key>name</key>
-        <string>keyword.other.alter-add.sql</string>
+                <string>keyword.other.alias.mysql</string>
       </dict>
       <dict>
         <key>match</key>
         <string>(?i)\b(DESC|ASC)\b</string>
         <key>name</key>
-        <string>keyword.other.order.sql</string>
+                <string>keyword.other.order.mysql</string>
       </dict>
       <dict>
         <key>match</key>
         <string>\*</string>
         <key>name</key>
-        <string>keyword.operator.star.sql</string>
+                <string>keyword.operator.star.mysql</string>
       </dict>
       <dict>
         <key>match</key>
         <string>[!&lt;&gt;]?=|&lt;&gt;|&lt;|&gt;|NOT IN|\bIN\b|BETWEEN|!=|<=>|<=|=>|<|></string>
         <key>name</key>
-        <string>keyword.operator.comparison.sql</string>
+                <string>keyword.operator.comparison.mysql</string>
       </dict>
       <dict>
         <key>match</key>
         <string>-|\+|/</string>
         <key>name</key>
-        <string>keyword.operator.math.sql</string>
+                <string>keyword.operator.math.mysql</string>
       </dict>
       <dict>
         <key>match</key>
@@ -471,7 +471,7 @@
         <key>match</key>
         <string>(?i)\b(CURRENT_(DATE|TIME(STAMP)?|USER)|(SESSION|SYSTEM)_USER)\b</string>
         <key>name</key>
-        <string>support.function.scalar.sql</string>
+                <string>support.function.scalar.mysql</string>
       </dict>
       <dict>
         <key>comment</key>
@@ -479,13 +479,13 @@
         <key>match</key>
         <string>(?i)\b(AVG|COUNT|MIN|MAX|SUM)(?=\s*\()</string>
         <key>name</key>
-        <string>support.function.aggregate.sql</string>
+                <string>support.function.aggregate.mysql</string>
       </dict>
       <dict>
         <key>match</key>
         <string>(?i)\b(DELIMITER|CONCATENATE|CONVERT|LOWER|SUBSTRING|TRANSLATE|TRIM|UPPER)\b</string>
         <key>name</key>
-        <string>support.function.string.sql</string>
+                <string>support.function.string.mysql</string>
       </dict>
       <dict>
         <key>captures</key>
@@ -493,12 +493,12 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>constant.other.database-name.sql</string>
+                        <string>constant.other.database-name.mysql</string>
           </dict>
           <key>2</key>
           <dict>
             <key>name</key>
-            <string>constant.other.table-name.sql</string>
+                        <string>constant.other.table-name.mysql</string>
           </dict>
         </dict>
         <key>match</key>
@@ -560,13 +560,13 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.comment.sql</string>
+                                <string>punctuation.definition.comment.mysql</string>
               </dict>
             </dict>
             <key>match</key>
             <string>(--).*$\n?</string>
             <key>name</key>
-            <string>comment.line.double-dash.sql</string>
+                        <string>comment.line.double-dash.mysql</string>
           </dict>
           <dict>
             <key>captures</key>
@@ -574,13 +574,13 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.comment.sql</string>
+                                <string>punctuation.definition.comment.mysql</string>
               </dict>
             </dict>
             <key>match</key>
             <string>(#).*$\n?</string>
             <key>name</key>
-            <string>comment.line.number-sign.sql</string>
+                        <string>comment.line.number-sign.mysql</string>
           </dict>
           <dict>
             <key>begin</key>
@@ -590,7 +590,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.comment.sql</string>
+                                <string>punctuation.definition.comment.mysql</string>
               </dict>
             </dict>
             <key>end</key>
@@ -612,7 +612,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.begin.sql</string>
+                                <string>punctuation.definition.string.begin.mysql</string>
               </dict>
             </dict>
             <key>end</key>
@@ -622,11 +622,11 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.end.sql</string>
+                                <string>punctuation.definition.string.end.mysql</string>
               </dict>
             </dict>
             <key>name</key>
-            <string>string.regexp.sql</string>
+                        <string>string.regexp.mysql</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -637,7 +637,7 @@
                 <key>match</key>
                 <string>\\/</string>
                 <key>name</key>
-                <string>constant.character.escape.slash.sql</string>
+                                <string>constant.character.escape.slash.mysql</string>
               </dict>
             </array>
           </dict>
@@ -649,7 +649,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.begin.sql</string>
+                                <string>punctuation.definition.string.begin.mysql</string>
               </dict>
             </dict>
             <key>comment</key>
@@ -661,11 +661,11 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.end.sql</string>
+                                <string>punctuation.definition.string.end.mysql</string>
               </dict>
             </dict>
             <key>name</key>
-            <string>string.regexp.modr.sql</string>
+                        <string>string.regexp.modr.mysql</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -681,7 +681,7 @@
         <key>match</key>
         <string>\\.</string>
         <key>name</key>
-        <string>constant.character.escape.sql</string>
+                <string>constant.character.escape.mysql</string>
       </dict>
       <key>string_interpolation</key>
       <dict>
@@ -690,13 +690,13 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>punctuation.definition.string.end.sql</string>
+                        <string>punctuation.definition.string.end.mysql</string>
           </dict>
         </dict>
         <key>match</key>
         <string>(#\{)([^\}]*)(\})</string>
         <key>name</key>
-        <string>string.interpolated.sql</string>
+                <string>string.interpolated.mysql</string>
       </dict>
       <key>strings</key>
       <dict>
@@ -708,12 +708,12 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.begin.sql</string>
+                                <string>punctuation.definition.string.begin.mysql</string>
               </dict>
               <key>3</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.end.sql</string>
+                                <string>punctuation.definition.string.end.mysql</string>
               </dict>
             </dict>
             <key>comment</key>
@@ -721,7 +721,7 @@
             <key>match</key>
             <string>(')[^'\\]*(')</string>
             <key>name</key>
-            <string>string.quoted.single.sql</string>
+                        <string>string.quoted.single.mysql</string>
           </dict>
           <dict>
             <key>begin</key>
@@ -731,7 +731,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.begin.sql</string>
+                                <string>punctuation.definition.string.begin.mysql</string>
               </dict>
             </dict>
             <key>end</key>
@@ -741,11 +741,11 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.end.sql</string>
+                                <string>punctuation.definition.string.end.mysql</string>
               </dict>
             </dict>
             <key>name</key>
-            <string>string.quoted.single.sql</string>
+                        <string>string.quoted.single.mysql</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -760,12 +760,12 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.begin.sql</string>
+                                <string>punctuation.definition.string.begin.mysql</string>
               </dict>
               <key>3</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.end.sql</string>
+                                <string>punctuation.definition.string.end.mysql</string>
               </dict>
             </dict>
             <key>comment</key>
@@ -773,7 +773,7 @@
             <key>match</key>
             <string>(`)[^`\\]*(`)</string>
             <key>name</key>
-            <string>string.quoted.other.backtick.sql</string>
+                        <string>string.quoted.other.backtick.mysql</string>
           </dict>
           <dict>
             <key>begin</key>
@@ -783,7 +783,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.begin.sql</string>
+                                <string>punctuation.definition.string.begin.mysql</string>
               </dict>
             </dict>
             <key>end</key>
@@ -793,11 +793,11 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.end.sql</string>
+                                <string>punctuation.definition.string.end.mysql</string>
               </dict>
             </dict>
             <key>name</key>
-            <string>string.quoted.other.backtick.sql</string>
+                        <string>string.quoted.other.backtick.mysql</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -812,12 +812,12 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.begin.sql</string>
+                                <string>punctuation.definition.string.begin.mysql</string>
               </dict>
               <key>3</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.end.sql</string>
+                                <string>punctuation.definition.string.end.mysql</string>
               </dict>
             </dict>
             <key>comment</key>
@@ -825,7 +825,7 @@
             <key>match</key>
             <string>(")(?:[^"#]|\"|\')*(")</string>
             <key>name</key>
-            <string>string.quoted.double.sql</string>
+                        <string>string.quoted.double.mysql</string>
           </dict>
           <dict>
             <key>begin</key>
@@ -835,7 +835,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.begin.sql</string>
+                                <string>punctuation.definition.string.begin.mysql</string>
               </dict>
             </dict>
             <key>end</key>
@@ -845,11 +845,11 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.end.sql</string>
+                                <string>punctuation.definition.string.end.mysql</string>
               </dict>
             </dict>
             <key>name</key>
-            <string>string.quoted.double.sql</string>
+                        <string>string.quoted.double.mysql</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -866,7 +866,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.begin.sql</string>
+                                <string>punctuation.definition.string.begin.mysql</string>
               </dict>
             </dict>
             <key>end</key>
@@ -876,11 +876,11 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.string.end.sql</string>
+                                <string>punctuation.definition.string.end.mysql</string>
               </dict>
             </dict>
             <key>name</key>
-            <string>string.other.quoted.brackets.sql</string>
+                        <string>string.other.quoted.brackets.mysql</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -893,7 +893,7 @@
       </dict>
     </dict>
     <key>scopeName</key>
-    <string>source.sql</string>
+        <string>source.mysql</string>
     <key>uuid</key>
     <string>A41BE23A-7EF9-11E5-857F-40167E632F0F</string>
   </dict>

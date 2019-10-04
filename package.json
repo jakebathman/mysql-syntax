@@ -21,14 +21,14 @@
     "icon": "icon.png",
     "contributes": {
         "languages": [{
-            "id": "sql",
-            "aliases": ["MySQL", "sql"],
+            "id": "mysql",
+            "aliases": ["MySQL", "mysql"],
             "extensions": [".sql",".ddl",".dml"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "sql",
-            "scopeName": "source.sql",
+            "language": "mysql",
+            "scopeName": "source.mysql",
             "path": "./syntaxes/MySQL.tmLanguage"
         }]
     }
