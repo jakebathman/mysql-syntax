@@ -108,3 +108,17 @@ where column1 = 'foo';
 
 select id,animal as 'Animal Name', expiry from creatures
 
+-- Issue #18: TIMESTAMPDIFF and -ADD
+-- Also should highlight SECOND and HOUR
+SELECT
+    id,
+    TIMESTAMPADD(SECOND, duration, start_time) as end_time
+FROM
+    JobReport
+WHERE
+    TIMESTAMPDIFF(HOUR, creation_time, NOW()) < 24 AND
+    LENGTH(timeline) > 10
+ORDER BY
+    id DESC
+LIMIT 1000;
+
