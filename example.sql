@@ -122,3 +122,34 @@ ORDER BY
     id DESC
 LIMIT 1000;
 
+-- Issue #23: JOIN
+UPDATE
+
+smev_fk.smev_fk_charge as c
+JOIN
+smev_request.smev_req_fk_charge as r
+on c.id = r.REQ_charge_id
+
+-- Issue #25: RESTRICT
+create table event
+	(	id				bigint unsigned		not null	primary key 	auto_increment
+	,	event_type_id	smallint 			not null
+	,	foreign key		event_type_id		references event_type(id)	on delete restrict	on update restrict
+	);
+
+-- Issue #27: TINYINT, MEDIUMINT, TABLE
+create TABLE test_int(
+    a tinyint,
+    b smallint,
+    c mediumint,
+    d int,
+    e bigint,
+);
+
+-- Issue #28: JOIN 
+select ifnull(column_get(choices, answer as char), "total") as "birdingsite", count(*) as "votes"
+from survey_answers
+join survey_questions using (question_id)
+    where survey_id = 1 and question-id = 1
+group by answer with rollup;
+
